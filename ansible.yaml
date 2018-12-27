@@ -1,11 +1,11 @@
 ---
-- hosts: <group name>
-  vars:
-    ansible_ssh_private_key_file: /var/lib/jenkins/.ssh/id_rsa
-    ansible_user: jenkins
-    ansible_become: yes
+- hosts: webserver
+  become: yes
+  user: jenkins
+  gather_facts: no
+  connection: ssh
   tasks:
-  - name: install a httpd pkg
-    yum: name=httpd state=latest
-  - name: start a httpd service
-    service: name=httpd state=restarted
+    - name: Install a Lynx pkg
+      yum: name=lynx state=latest
+    - name: Start a Lynx service
+      service: name=lynx state=restarted
