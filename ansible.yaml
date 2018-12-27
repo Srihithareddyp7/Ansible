@@ -1,11 +1,9 @@
 ---
 - hosts: webserver
-  become: yes
-  user: jenkins
   gather_facts: no
   connection: ssh
   tasks:
-    - name: Install a Lynx pkg
-      yum: name=lynx state=latest
-    - name: Start a Lynx service
-      service: name=lynx state=restarted
+    - name: Install a HTTPD pkg
+      yum: name=httpd state=latest
+    - name: Start a HTTPD service
+      service: name=httpd state=restarted
