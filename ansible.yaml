@@ -11,6 +11,7 @@
       service: name=httpd state=restarted
     - name: insert/update HTML surrounded by custom markers after <body> line
       file:
-        path: /var/www/html/index.html
+        path: "/var/www/html/index.html"
+        state: touch
         content: |
           "Hello World...!"
