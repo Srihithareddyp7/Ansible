@@ -10,10 +10,7 @@
     - name: Start a HTTPD service
       service: name=httpd state=restarted
     - name: insert/update HTML surrounded by custom markers after <body> line
-      blockinfile:
+      file:
         path: /var/www/html/index.html
-        marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
-        insertafter: "<body>"
         content: |
-          <h1>Welcome to {{ ansible_hostname }}</h1>
-          <p>Last updated on {{ ansible_date_time.iso8601 }}</p>
+          "Hello World...!"
