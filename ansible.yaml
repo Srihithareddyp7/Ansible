@@ -1,5 +1,7 @@
 ---
 - hosts: webserver
+  become: yes
+  user: jenkins
   gather_facts: no
   connection: ssh
   tasks:
