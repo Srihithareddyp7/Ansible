@@ -14,4 +14,4 @@
         path: "/var/www/html/index.html"
         state: touch
         content: |
-          "Hello World...!"
+          Hello World...!
